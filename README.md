@@ -21,8 +21,8 @@ jekyll 变量和语法教程
   
 * #### Jekyll的安装及配置
 
-     * - _includes文件夹中所放的文件是最终要放到模版中的一些代码片段。
-     * - _layouts中放的一些模版，模版是用包含page或post内容的。  
+     * _includes文件夹中所放的文件是最终要放到模版中的一些代码片段。
+     * _layouts中放的一些模版，模版是用包含page或post内容的。  
          * Jekyll的模版使用HTML语法来写，并包含YAML Front Matter。
          * 所有的模版都可用Liquid来与网站进行交互。所的的模版都可以使用全局变量site和page，site变量包含
          * 该网站所有可以接触得到的内容和元数据(meta-data)，page变量包含的是当前渲染的page或post的所有可以接触得到的数据。
