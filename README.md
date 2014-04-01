@@ -36,8 +36,8 @@ jekyll 变量和语法教程
            
      *  _post文件夹中放的是自己要发布的post文章。
      
-            1. post文件的命名规则为YEAR-MONTH-DATE-title.MARKUP，使用rakepost会自动将
-               post文件命名合适。
+            1. post文件的命名规则为YEAR-MONTH-DATE-title.MARKUP，使用rakepost会自
+               动将post文件命名合适。
             2. 而对于page，所有放在根目录下或不以下划线开头的文件夹中有格式的文件都会
                被Jekyll处理成page。这里说的有格式是指文件含有YAML Front Matter。
             3. 所有的post和page都要用markdown或者texile或者HTML语法来写，并可以包含
@@ -51,7 +51,8 @@ jekyll 变量和语法教程
 
 * ### Jekyll模板全局变量
   
-     *变量   &   描述*
+     <h4>*变量   &   描述* </h4>
+
      + **site** :全站的信息+_config.yml文件中的配置选项
      + **page** :这个变量中包含YAML前置数据,另外加上两个额外的变量值:url和content。
      + **content** :在布局模板文件中，这里变量包含了页面的子视图。这个变量将会把渲染后的内容插入到模板文件中。
@@ -60,7 +61,7 @@ jekyll 变量和语法教程
 
 * ### Jekyll模板Site变量
 
-     *变量	 &    描述*
+     <h4>*变量	 &    描述*</h4>
      + **site.time** :	当前的时间(当你运行Jekyll时的时间)
      + **site.posts** :	一个按时间逆序的文章列表。
      + **site.related_posts** :	如果当前被处理的页面是一个文章文件，那这个变量是一个包含了最多10篇相关文章的列表。
@@ -74,7 +75,7 @@ jekyll 变量和语法教程
 
 * ### Jekyll模板Page变量
 
-     *变量	 &   描述*
+     <h4>*变量	 &   描述*</h4>
      + **page.content** :页面中未渲染的内容
      + **page.title** :文章的标题
      + **page.url** :除去域名以外的URL，例子:/2013/12/14/higrid-net.html
@@ -90,7 +91,7 @@ jekyll 变量和语法教程
 
 * ### Jekyll模板Paginator变量
 
-     *变量	 &   描述*
+     <h4>*变量	 &   描述*</h4>
      + **paginator.per_page** :每一个页面上文章的数量
      + **paginator.posts** :当前页面上可用的文章
      + **paginator.total_posts** :所有文章的数量
