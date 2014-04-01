@@ -30,21 +30,21 @@ jekyll 变量和语法教程
      
             1. Jekyll的模版使用HTML语法来写，并包含YAML Front Matter。
             2. 所有的模版都可用Liquid来与网站进行交互。
-            3. 所有的模版都可以使用全局变量site和page，site变量包含该网站所有可以接触得到的
-               内容和元数据(meta-data)，page变量包含的是当前渲染的page或post的所有可以接触
-               得到的数据。
+            3. 所有的模版都可以使用全局变量site和page，site变量包含该网站所有可以接触
+               得到的内容和元数据(meta-data)，page变量包含的是当前渲染的page或post
+               的所有可以接触得到的数据。
            
      *  _post文件夹中放的是自己要发布的post文章。
      
-            1. post文件的命名规则为YEAR-MONTH-DATE-title.MARKUP，使用rakepost会自动将post
-               文件命名合适。
-            2. 而对于page，所有放在根目录下或不以下划线开头的文件夹中有格式的文件都会被
-               Jekyll处理成page。这里说的有格式是指文件含有YAML Front Matter。
-            3. 所有的post和page都要用markdown或者texile或者HTML语法来写，并可以包含Liquid
-               模版的语法。还要有 YAML Front Matter ( Jekyll只处理具有YAML Front Matter
-               的文件)。
-            4. YAML Frontatter必须放在文件的开头，一对---之间，用户可在这一对---间设置预先
-               定义的变量或用户自己的数据：<变量或用户自己的数据>
+            1. post文件的命名规则为YEAR-MONTH-DATE-title.MARKUP，使用rakepost会自动将
+               post文件命名合适。
+            2. 而对于page，所有放在根目录下或不以下划线开头的文件夹中有格式的文件都会
+               被Jekyll处理成page。这里说的有格式是指文件含有YAML Front Matter。
+            3. 所有的post和page都要用markdown或者texile或者HTML语法来写，并可以包含
+               Liquid模版的语法。还要有 YAML Front Matter ( Jekyll只处理具有
+               YAML Front Matter 的文件)。
+            4. YAML Frontatter必须放在文件的开头，一对---之间，用户可在这一对---间
+               设置预先定义的变量或用户自己的数据：<变量或用户自己的数据>
 
    ------------------------------
 
