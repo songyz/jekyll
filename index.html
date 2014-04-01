@@ -1,42 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
     <title>Jekyll by songyz</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
-
   <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/songyz/jekyll">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/songyz/jekyll/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/songyz/jekyll/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <header>
-      <div class="container">
-        <h1>Jekyll</h1>
-        <h2></h2>
+    <div class="wrapper">
 
-        <section id="downloads">
-          <a href="https://github.com/songyz/jekyll/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/songyz/jekyll/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/songyz/jekyll" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+      <section>
+        <div id="title">
+          <h1>Jekyll</h1>
+          <p></p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/songyz">songyz</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
 
-    <div class="container">
-      <section id="main_content">
         <h1>
 <a name="jekyll-%E5%8F%98%E9%87%8F%E5%92%8C%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B" class="anchor" href="#jekyll-%E5%8F%98%E9%87%8F%E5%92%8C%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B"><span class="octicon octicon-link"></span></a>jekyll 变量和语法教程</h1>
 
 <blockquote>
-<h2>
-<a name="jekyll%E4%BC%9A%E9%81%8D%E5%8E%86%E4%BD%A0%E7%9A%84%E7%AB%99%E7%82%B9%E6%9D%A5%E5%AF%BB%E6%89%BE%E9%9C%80%E8%A6%81%E5%A4%84%E7%90%86%E7%9A%84%E6%96%87%E4%BB%B6%E4%BB%BB%E4%BD%95%E5%85%B7%E6%9C%89-yaml%E5%89%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%87%E4%BB%B6%E9%83%BD%E5%B0%86%E4%BC%9A%E8%A2%AB%E5%A4%84%E7%90%86%E6%AF%8F%E4%B8%80%E4%B8%AA%E8%BF%99%E6%A0%B7%E7%9A%84%E6%96%87%E4%BB%B6" class="anchor" href="#jekyll%E4%BC%9A%E9%81%8D%E5%8E%86%E4%BD%A0%E7%9A%84%E7%AB%99%E7%82%B9%E6%9D%A5%E5%AF%BB%E6%89%BE%E9%9C%80%E8%A6%81%E5%A4%84%E7%90%86%E7%9A%84%E6%96%87%E4%BB%B6%E4%BB%BB%E4%BD%95%E5%85%B7%E6%9C%89-yaml%E5%89%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%87%E4%BB%B6%E9%83%BD%E5%B0%86%E4%BC%9A%E8%A2%AB%E5%A4%84%E7%90%86%E6%AF%8F%E4%B8%80%E4%B8%AA%E8%BF%99%E6%A0%B7%E7%9A%84%E6%96%87%E4%BB%B6"><span class="octicon octicon-link"></span></a>Jekyll会遍历你的站点，来寻找需要处理的文件。任何具有 YAML前置数据的文件都将会被处理，每一个这样的文件,</h2>
-
-<h2>
-<a name="jekyll%E9%83%BD%E4%BC%9A%E9%80%9A%E8%BF%87liquid%E6%A8%A1%E6%9D%BF%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E8%AE%B8%E5%A4%9A%E5%8F%AF%E7%94%A8%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%8F%98%E9%87%8F%E4%B8%8B%E9%9D%A2%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%AF%E7%94%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%97%E8%A1%A8" class="anchor" href="#jekyll%E9%83%BD%E4%BC%9A%E9%80%9A%E8%BF%87liquid%E6%A8%A1%E6%9D%BF%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E8%AE%B8%E5%A4%9A%E5%8F%AF%E7%94%A8%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%8F%98%E9%87%8F%E4%B8%8B%E9%9D%A2%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%AF%E7%94%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%97%E8%A1%A8"><span class="octicon octicon-link"></span></a>Jekyll都会通过Liquid模板系统使用许多可用的页面变量。下面是一个可用变量的列表。</h2>
+<p>Jekyll会遍历你的站点，来寻找需要处理的文件。任何具有 YAML前置数据的文件都将会被处理，每一个这样的文件, Jekyll都会通过Liquid模板系统使用许多可用的页面变量。下面是一个可用变量的列表。</p>
 </blockquote>
 
 <h2>
@@ -64,32 +70,25 @@
 <ul>
 <li><p>_includes文件夹中所放的文件是最终要放到模版中的一些代码片段。</p></li>
 <li>
-<p>_layouts中放的一些模版，模版是用包含page或post内容的。  </p>
+<p>_layouts中放的一些模版，模版是用包含page或post内容的。 </p>
 
-<ul>
-<li>Jekyll的模版使用HTML语法来写，并包含YAML Front Matter。</li>
-<li>所有的模版都可用Liquid来与网站进行交互。</li>
-<li>所的的模版都可以使用全局变量site和page
-
-<ul>
-<li>site变量包含该网站所有可以接触得到的内容和元数据(meta-data)，</li>
-<li>page变量包含的是当前渲染的page或post的所有可以接触得到的数据。</li>
-</ul>
-</li>
-</ul>
+<pre><code>1. Jekyll的模版使用HTML语法来写，并包含YAML Front Matter。
+2. 所有的模版都可用Liquid来与网站进行交互。
+3. 所的的模版都可以使用全局变量site和page，site变量包含该网站所有可以接触得到的内容和元数据(meta-data)，
+   page变量包含的是当前渲染的page或post的所有可以接触得到的数据。
+</code></pre>
 </li>
 <li>
 <p>_post文件夹中放的是自己要发布的post文章。</p>
 
-<ul>
-<li>post文件的命名规则为YEAR-MONTH-DATE-title.MARKUP，使用rakepost会自动将post文件命名合适。</li>
-<li>而对于page，所有放在根目录下或不以下划线开头的文件夹中有格式的文件都会被Jekyll处理成page。
-这里说的有格式是指文件含有YAML Front Matter。</li>
-<li>所有的post和page都要用markdown或者texile或者HTML语法来写，并可以包含Liquid模版的语法。</li>
-<li>还要有 YAML Front Matter (Jekyll只处理具有YAML Front Matter的文件)。</li>
-<li>YAML Frontatter必须放在文件的开头，一对---之间，用户可在这一对---间设置预先定义的变量
-或用户自己的数据：&lt;变量或用户自己的数据&gt;</li>
-</ul>
+<pre><code>1. post文件的命名规则为YEAR-MONTH-DATE-title.MARKUP，使用rakepost会自动将post文件命名合适。
+2. 而对于page，所有放在根目录下或不以下划线开头的文件夹中有格式的文件都会被Jekyll处理成page。
+   这里说的有格式是指文件含有YAML Front Matter。
+3. 所有的post和page都要用markdown或者texile或者HTML语法来写，并可以包含Liquid模版的语法。
+   还要有 YAML Front Matter (Jekyll只处理具有YAML Front Matter的文件)。
+4. YAML Frontatter必须放在文件的开头，一对---之间，用户可在这一对---间设置预先定义的变量
+   或用户自己的数据：&lt;变量或用户自己的数据&gt;
+</code></pre>
 </li>
 </ul>
 <hr>
@@ -98,92 +97,102 @@
 <h3>
 <a name="jekyll%E6%A8%A1%E6%9D%BF%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F" class="anchor" href="#jekyll%E6%A8%A1%E6%9D%BF%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="octicon octicon-link"></span></a>Jekyll模板全局变量</h3>
 
-<p><strong>变量   &amp; 描述</strong></p>
+<pre><code>变量    &amp;   描述
+</code></pre>
 
-<blockquote>
-<p><em>site</em> :全站的信息+_config.yml文件中的配置选项</p>
-
-<p><em>page</em> :这个变量中包含YAML前置数据,另外加上两个额外的变量值:url和content。</p>
-
-<p><em>content</em> :在布局模板文件中，这里变量包含了页面的子视图。这个变量将会把渲染后的内容插入到模板文件中。
-    这个变量不能在文章和页面文件中使用。</p>
-
-<p><em>paginator</em> :一旦paginate配置选项被设置了，这个变量才能被使用。</p>
-</blockquote>
+<ul>
+<li>
+<strong>site</strong> :全站的信息+_config.yml文件中的配置选项</li>
+<li>
+<strong>page</strong> :这个变量中包含YAML前置数据,另外加上两个额外的变量值:url和content。</li>
+<li>
+<strong>content</strong> :在布局模板文件中，这里变量包含了页面的子视图。这个变量将会把渲染后的内容插入到模板文件中。
+这个变量不能在文章和页面文件中使用。</li>
+<li>
+<strong>paginator</strong> :一旦paginate配置选项被设置了，这个变量才能被使用。</li>
+</ul>
 </li>
 <li>
 <h3>
 <a name="jekyll%E6%A8%A1%E6%9D%BFsite%E5%8F%98%E9%87%8F" class="anchor" href="#jekyll%E6%A8%A1%E6%9D%BFsite%E5%8F%98%E9%87%8F"><span class="octicon octicon-link"></span></a>Jekyll模板Site变量</h3>
 
-<p><strong>变量   &amp; 描述</strong></p>
+<pre><code>变量  &amp;   描述
+</code></pre>
 
-<blockquote>
-<p><em>site.time</em> :    当前的时间(当你运行Jekyll时的时间)</p>
-
-<p><em>site.posts</em> :   一个按时间逆序的文章列表。</p>
-
-<p><em>site.related_posts</em> :   如果当前被处理的页面是一个文章文件，那这个变量是一个包含了最多10篇相关文章的列表。
-     默认来说，这些相关文章是低质量但计算快的。为了得到高质量但计算慢的结果，
-     运行Jekyll命令时可以加上--lsi选项。(潜在语意索引)</p>
-
-<p><em>site.categories.CATEGORY</em> :所有在CATEGORY分类中的文章列表</p>
-
-<p><em>site.tags.TAG</em>  :所有拥有TAG标签的文章的列表</p>
-
-<p><em>site.[CONFIGURATION_DATA]</em> :截止0.5.2版本，所有在_config.yml中的数据都能够通过site变量调用。举例来说，
+<ul>
+<li>
+<strong>site.time</strong> :  当前的时间(当你运行Jekyll时的时间)</li>
+<li>
+<strong>site.posts</strong> : 一个按时间逆序的文章列表。</li>
+<li>
+<strong>site.related_posts</strong> : 如果当前被处理的页面是一个文章文件，那这个变量是一个包含了最多10篇相关文章的列表。
+默认来说，这些相关文章是低质量但计算快的。为了得到高质量但计算慢的结果，
+运行Jekyll命令时可以加上--lsi选项。(潜在语意索引)</li>
+<li>
+<strong>site.categories.CATEGORY</strong> :所有在CATEGORY分类中的文章列表</li>
+<li>
+<strong>site.tags.TAG</strong> :所有拥有TAG标签的文章的列表</li>
+<li>
+<strong>site.[CONFIGURATION_DATA]</strong> :截止0.5.2版本，所有在_config.yml中的数据都能够通过site变量调用。举例来说，
 如果你有一个这样的选项在你的配置文件中:url: <a href="http://higrid.net%EF%BC%8C%E9%82%A3%E5%9C%A8%E6%96%87%E7%AB%A0%E5%92%8C%E9%A1%B5%E9%9D%A2%E6%96%87%E4%BB%B6%E4%B8%AD%E5%8F%AF%E4%BB%A5%E8%BF%99%E6%A0%B7%E8%B0%83%E7%94%A8%7B">http://higrid.net，那在文章和页面文件中可以这样调用{</a> { site.url } }。
-Jekyll并不会自动解析修改过的_config.yml文件，你想要启用新的设置选项，你需要重启Jekyll</p>
-</blockquote>
+Jekyll并不会自动解析修改过的_config.yml文件，你想要启用新的设置选项，你需要重启Jekyll</li>
+</ul>
 </li>
 <li>
 <h3>
 <a name="jekyll%E6%A8%A1%E6%9D%BFpage%E5%8F%98%E9%87%8F" class="anchor" href="#jekyll%E6%A8%A1%E6%9D%BFpage%E5%8F%98%E9%87%8F"><span class="octicon octicon-link"></span></a>Jekyll模板Page变量</h3>
 
-<p><strong>变量    &amp; 描述</strong></p>
+<pre><code>变量  &amp;   描述
+</code></pre>
 
-<blockquote>
-<p>page.content  页面中未渲染的内容</p>
-
-<p>page.title    文章的标题</p>
-
-<p>page.url  除去域名以外的URL，例子:/2013/12/14/higrid-net.html</p>
-
-<p>page.date 指定每一篇文章的时间，这个选项能够覆盖一篇文章中前置数据设置的时间，它的格式是这样的:YYYY-MM-DD HH:MM:SS</p>
-
-<p>page.id   每一篇文章的唯一标示符(在RSS中非常有用) 例子：/2008/12/14/higrid-net</p>
-
-<p>page.categories   这篇文章隶属的分类的一个列表，分类是通过在_post目录中的目录结构推导而来的。举例来说，在路径/work/code/_posts/2008-12-24-closures.textile下的文件，这个变量将会是[work,code]。这个变量也能在YAML前置数据中被指定。</p>
-
-<p>page.tags 这篇文章的标签的列表。这些数据能够在YAML前置数据中指定</p>
-
-<p>page.next 按时间序的下一篇文章</p>
-
-<p>page.content  按时间序的上一篇文章
-注意:任何你自己指定的自定义前置数据都能够通过page调用。举例来说，如果你在页面的前置数据中设置了custom_css: true，那这个值可以在模板可以这样调用:page.custom_css</p>
-</blockquote>
+<ul>
+<li>
+<strong>page.content</strong> :页面中未渲染的内容</li>
+<li>
+<strong>page.title</strong> :文章的标题</li>
+<li>
+<strong>page.url</strong> :除去域名以外的URL，例子:/2013/12/14/higrid-net.html</li>
+<li>
+<strong>page.date</strong> :指定每一篇文章的时间，这个选项能够覆盖一篇文章中前置数据设置的时间，它的格式是这样的:YYYY-MM-DD HH:MM:SS</li>
+<li>
+<strong>page.id</strong> :每一篇文章的唯一标示符(在RSS中非常有用) 例子：/2008/12/14/higrid-net</li>
+<li>
+<strong>page.categories</strong> :这篇文章隶属的分类的一个列表，分类是通过在_post目录中的目录结构推导而来的。
+举例来说，在路径/work/code/_posts/2008-12-24-closures.textile下的文件，这个变量将会是[work,code]。
+这个变量也能在YAML前置数据中被指定。</li>
+<li>
+<strong>page.tags</strong> :这篇文章的标签的列表。这些数据能够在YAML前置数据中指定</li>
+<li>
+<strong>page.next</strong> :按时间序的下一篇文章</li>
+<li>
+<strong>page.content</strong> :按时间序的上一篇文章
+注意:任何你自己指定的自定义前置数据都能够通过page调用。举例来说，如果你在页面的前置数据中设置了custom_css: true，那这个值可以在模板可以这样调用:page.custom_css</li>
+</ul>
 </li>
 <li>
 <h3>
 <a name="jekyll%E6%A8%A1%E6%9D%BFpaginator%E5%8F%98%E9%87%8F" class="anchor" href="#jekyll%E6%A8%A1%E6%9D%BFpaginator%E5%8F%98%E9%87%8F"><span class="octicon octicon-link"></span></a>Jekyll模板Paginator变量</h3>
 
-<p><strong>变量    &amp; 描述</strong></p>
+<pre><code>变量  &amp;   描述
+</code></pre>
 
-<blockquote>
-<p>paginator.per_page    每一个页面上文章的数量</p>
-
-<p>paginator.posts   当前页面上可用的文章</p>
-
-<p>paginator.total_posts 所有文章的数量</p>
-
-<p>paginator.total_pages 所有页面的数量</p>
-
-<p>paginator.page    当前页面的数量</p>
-
-<p>paginator.previous_page   前面的页面的数量</p>
-
-<p>paginator.next_page   </p>
-</blockquote>
-
+<ul>
+<li>
+<strong>paginator.per_page</strong> :每一个页面上文章的数量</li>
+<li>
+<strong>paginator.posts</strong> :当前页面上可用的文章</li>
+<li>
+<strong>paginator.total_posts</strong> :所有文章的数量</li>
+<li>
+<strong>paginator.total_pages</strong> :所有页面的数量</li>
+<li>
+<strong>paginator.page</strong> :当前页面的数量</li>
+<li>
+<strong>paginator.previous_page</strong> :前面的页面的数量</li>
+<li>
+<strong>paginator.next_page</strong> ：接下来的的页面的数量<br>
+</li>
+</ul>
 <hr>
 </li>
 </ul><h3>
@@ -210,8 +219,9 @@ git push origin master</p>
 </li>
 </ul>
       </section>
-    </div>
 
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
