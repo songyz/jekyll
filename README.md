@@ -1,13 +1,15 @@
 jekyll 变量和语法教程
 ---------------------
 
->Jekyll会遍历你的站点，来寻找需要处理的文件。任何具有 YAML >前置数据的文件都将会被处理，每一个这样的文件，Jekyll都会通过Liquid模板系统使用许多可用的页面变量。下面是一个可用变量的列表。
+> Jekyll会遍历你的站点，来寻找需要处理的文件。任何具有 YAML 
+> 前置数据的文件都将会被处理，每一个这样的文件，Jekyll都会通过Liquid模板系统使用许多可用的页面变量。下面是一个可用变量的列表。
 
 
-### *Jekyll 目录及一些说明*
+*Jekyll 目录及一些说明*
+=======================
 
 
-* #### Jekyll 标准目录树
+* ### Jekyll 标准目录树
 
      * _config.yml   ................ Jekyll的配置文件
      
@@ -19,26 +21,28 @@ jekyll 变量和语法教程
       
      * _sites        ......................... 预览时产生的文件都放在该文件夹中
   
-* #### Jekyll的安装及配置
+* ### Jekyll的安装及配置
 
      * _includes文件夹中所放的文件是最终要放到模版中的一些代码片段。
      * _layouts中放的一些模版，模版是用包含page或post内容的。  
-         * Jekyll的模版使用HTML语法来写，并包含YAML Front Matter。
-         * 所有的模版都可用Liquid来与网站进行交互。所的的模版都可以使用全局变量site和page，site变量包含
-         * 该网站所有可以接触得到的内容和元数据(meta-data)，page变量包含的是当前渲染的page或post的所有可以接触得到的数据。
-     * - _post文件夹中放的是自己要发布的post文章。
-            post文件的命名规则为YEAR-MONTH-DATE-title.MARKUP，使用rakepost会自动将post文件命名合适。
-            而对于page，所有放在根目录下或不以下划线开头的文件夹中有格式的文件
-      都会被Jekyll处理成page。这里说的有格式是指文件含有YAML Front
-      Matter。所有的post和page都要用markdown或者texile或者HTML语法来写，并可以包含Liquid模版的语法。
-      还要有 YAML Front Matter (Jekyll只处理具有YAML Front Matter的文件)。YAML Front
-      Matter必须放在文件的开头，一对<--->之间，用户可在这一对<--->间设置预先定义的变量
-      或用户自己的数据：<变量或用户自己的数据>
+        1. Jekyll的模版使用HTML语法来写，并包含YAML Front Matter。
+        2. 所有的模版都可用Liquid来与网站进行交互。
+        3. 所的的模版都可以使用全局变量site和page
+           - site变量包含该网站所有可以接触得到的内容和元数据(meta-data)，
+           - page变量包含的是当前渲染的page或post的所有可以接触得到的数据。
+     *  _post文件夹中放的是自己要发布的post文章。
+        - post文件的命名规则为YEAR-MONTH-DATE-title.MARKUP，使用rakepost会自动将post文件命名合适。
+        - 而对于page，所有放在根目录下或不以下划线开头的文件夹中有格式的文件都会被Jekyll处理成page。
+        这里说的有格式是指文件含有YAML Front Matter。
+        - 所有的post和page都要用markdown或者texile或者HTML语法来写，并可以包含Liquid模版的语法。
+        - 还要有 YAML Front Matter (Jekyll只处理具有YAML Front Matter的文件)。
+        - YAML Frontatter必须放在文件的开头，一对---之间，用户可在这一对---间设置预先定义的变量
+          或用户自己的数据：<变量或用户自己的数据>
 
  --------------------
 
 
-* #### Jekyll模板全局变量
+* ### Jekyll模板全局变量
   
       变量	描述
       site	全站的信息+_config.yml文件中的配置选项
@@ -46,7 +50,7 @@ jekyll 变量和语法教程
       content	在布局模板文件中，这里变量包含了页面的子视图。这个变量将会把渲染后的内容插入到模板文件中。这个变量不能在文章和页面文件中使用。
       paginator	一旦paginate配置选项被设置了，这个变量才能被使用。
 
-* #### Jekyll模板Site变量
+* ### Jekyll模板Site变量
 
     变量	描述
     site.time	当前的时间(当你运行Jekyll时的时间)
@@ -56,7 +60,7 @@ jekyll 变量和语法教程
     site.tags.TAG	所有拥有TAG标签的文章的列表
     site.[CONFIGURATION_DATA]	截止0.5.2版本，所有在_config.yml中的数据都能够通过site变量调用。举例来说，如果你有一个这样的选项在你的配置文件中:url: http://higrid.net，那在文章和页面文件中可以这样调用{ { site.url } }。Jekyll并不会自动解析修改过的_config.yml文件，你想要启用新的设置选项，你需要重启Jekyll
 
-* #### Jekyll模板Page变量
+* ### Jekyll模板Page变量
 
     变量	    描述
     page.content	页面中未渲染的内容
@@ -70,7 +74,7 @@ jekyll 变量和语法教程
     page.content	按时间序的上一篇文章
     注意:任何你自己指定的自定义前置数据都能够通过page调用。举例来说，如果你在页面的前置数据中设置了custom_css: true，那这个值可以在模板可以这样调用:page.custom_css
 
-* #### Jekyll模板Paginator变量
+* ### Jekyll模板Paginator变量
 
     变量	描述
     paginator.per_page	每一个页面上文章的数量
@@ -81,7 +85,7 @@ jekyll 变量和语法教程
     paginator.previous_page	前面的页面的数量
     paginator.next_page	
 
-----------------------------
+ ----------------------------
 
 ###　Post或Page的创建及发布
 
