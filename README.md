@@ -30,7 +30,7 @@ jekyll 变量和语法教程
      
             1. Jekyll的模版使用HTML语法来写，并包含YAML Front Matter。
             2. 所有的模版都可用Liquid来与网站进行交互。
-            3. 所的的模版都可以使用全局变量site和page，site变量包含该网站所有可以接触得到的内
+            3. 所有的模版都可以使用全局变量site和page，site变量包含该网站所有可以接触得到的内
                容和元数据(meta-data)，page变量包含的是当前渲染的page或post的所有可以接触得到
                的数据。
            
@@ -68,7 +68,7 @@ jekyll 变量和语法教程
      + **site.categories.CATEGORY** :所有在CATEGORY分类中的文章列表
      + **site.tags.TAG** :所有拥有TAG标签的文章的列表
      + **site.[CONFIGURATION_DATA]** :截止0.5.2版本，所有在\_config.yml中的数据都能够通过site变量调用。举例来说，
-       如果你有一个这样的选项在你的配置文件中:url: http://higrid.net，那在文章和页面文件中可以这样调用{ { site.url } }。
+       如果你有一个这样的选项在你的配置文件中:<code>url:http://higrid.net</code>，那在文章和页面文件中可以这样调用<code>{{ site.url}}</code>。
        Jekyll并不会自动解析修改过的_config.yml文件，你想要启用新的设置选项，你需要重启Jekyll
 
 * ### Jekyll模板Page变量
@@ -77,15 +77,15 @@ jekyll 变量和语法教程
      + **page.content** :页面中未渲染的内容
      + **page.title** :文章的标题
      + **page.url** :除去域名以外的URL，例子:/2013/12/14/higrid-net.html
-     + **page.date** :指定每一篇文章的时间，这个选项能够覆盖一篇文章中前置数据设置的时间，它的格式是这样的:YYYY-MM-DD HH:MM:SS
+     + **page.date** :指定每一篇文章的时间，这个选项能够覆盖一篇文章中前置数据设置的时间，它的格式是这样的:<code>YYYY-MM-DD HH:MM:SS</code>
      + **page.id** :每一篇文章的唯一标示符(在RSS中非常有用) 例子：/2008/12/14/higrid-net
      + **page.categories** :这篇文章隶属的分类的一个列表，分类是通过在\_post目录中的目录结构推导而来的。
-     举例来说，在路径/work/code/_posts/2008-12-24-closures.textile下的文件，这个变量将会是[work,code]。
+     举例来说，在路径/work/code/_posts/2008-12-24-closures.textile下的文件，这个变量将会是<code>[work,code]</code>。
      这个变量也能在YAML前置数据中被指定。
      + **page.tags** :这篇文章的标签的列表。这些数据能够在YAML前置数据中指定
      + **page.next** :按时间序的下一篇文章
      + **page.content** :按时间序的上一篇文章
-    注意:任何你自己指定的自定义前置数据都能够通过page调用。举例来说，如果你在页面的前置数据中设置了custom\_css: true，那这个值可以在模板可以这样调用:page.custom_css
+    注意:任何你自己指定的自定义前置数据都能够通过page调用。举例来说，如果你在页面的前置数据中设置了<code>custom\_css: true</code>，那这个值可以在模板可以这样调用:<code>page.custom_css</code>
 
 * ### Jekyll模板Paginator变量
 
