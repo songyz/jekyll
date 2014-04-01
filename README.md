@@ -43,7 +43,7 @@ jekyll 变量和语法教程
             3. 所有的post和page都要用markdown或者texile或者HTML语法来写，并可以包含
                Liquid模版的语法。还要有 YAML Front Matter ( Jekyll只处理具有
                YAML Front Matter 的文件)。
-            4. YAML Frontatter必须放在文件的开头，一对---之间，用户可在这一对---间
+            4. YAML Front Matter必须放在文件的开头，一对---之间，用户可在这一对---间
                设置预先定义的变量或用户自己的数据：<变量或用户自己的数据>
 
    ------------------------------
@@ -51,16 +51,16 @@ jekyll 变量和语法教程
 
 * ### Jekyll模板全局变量
   
-        变量    &   描述
-    + **site** :全站的信息+_config.yml文件中的配置选项
-    + **page** :这个变量中包含YAML前置数据,另外加上两个额外的变量值:url和content。
-    + **content** :在布局模板文件中，这里变量包含了页面的子视图。这个变量将会把渲染后的内容插入到模板文件中。
-     这个变量不能在文章和页面文件中使用。
-    + **paginator** :一旦paginate配置选项被设置了，这个变量才能被使用。
+     *变量   &   描述*
+     + **site** :全站的信息+_config.yml文件中的配置选项
+     + **page** :这个变量中包含YAML前置数据,另外加上两个额外的变量值:url和content。
+     + **content** :在布局模板文件中，这里变量包含了页面的子视图。这个变量将会把渲染后的内容插入到模板文件中。
+       这个变量不能在文章和页面文件中使用。
+     + **paginator** :一旦paginate配置选项被设置了，这个变量才能被使用。
 
 * ### Jekyll模板Site变量
 
-        变量	&   描述
+     *变量	 &    描述*
      + **site.time** :	当前的时间(当你运行Jekyll时的时间)
      + **site.posts** :	一个按时间逆序的文章列表。
      + **site.related_posts** :	如果当前被处理的页面是一个文章文件，那这个变量是一个包含了最多10篇相关文章的列表。
@@ -74,7 +74,7 @@ jekyll 变量和语法教程
 
 * ### Jekyll模板Page变量
 
-        变量	&   描述
+     *变量	 &   描述*
      + **page.content** :页面中未渲染的内容
      + **page.title** :文章的标题
      + **page.url** :除去域名以外的URL，例子:/2013/12/14/higrid-net.html
@@ -90,7 +90,7 @@ jekyll 变量和语法教程
 
 * ### Jekyll模板Paginator变量
 
-        变量	&   描述
+     *变量	 &   描述*
      + **paginator.per_page** :每一个页面上文章的数量
      + **paginator.posts** :当前页面上可用的文章
      + **paginator.total_posts** :所有文章的数量
@@ -103,13 +103,13 @@ jekyll 变量和语法教程
 
 ###Post或Page的创建及发布
 
-* 创建Post文章
+* __创建Post文章__
 
     rake post title="文章标题"
   
     会自动创建一个具有合适文件名和YAML Front Matter的文件(使用时将"文章标题"替换成你要创建的文章的标题)。
 
-* 创建Page页面
+* __创建Page页面__
 
     rake page name="页面名称.md"   或者
     rake page name="pages/页面名称.md"
